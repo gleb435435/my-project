@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Drones by Gleb | Контакты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #cc0000;
+            --gray: #e5e5e5;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--black);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--red);
+        }
+        .nav-links a {
+            color: var(--white);
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--red);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Images/drone-banner.jpg') center/cover no-repeat;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-item i {
+            color: var(--red);
+            font-size: 1.5rem;
+        }
+        .contact-item p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+        .contact-form label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            background: var(--gray);
+            color: var(--black);
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .contact-form button:hover {
+            background: #a30000;
+        }
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Drones <span>by Gleb</span></a>
+                <div class="nav-links">
+                    <a href="about.html">О нас</a>
+                    <a href="contact.html">Контакты</a>
+                    <a href="signup.html"><button class="nav-btn">Регистрация</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>КОНТАКТЫ</h1>
+        </div>
+    </section>
+
+    <div class="container content">
+        <div class="contact-info">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contact-item">
+                <i class='bx bx-envelope'></i>
+                <p>glebsyprim@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <i class='bx bx-phone'></i>
+                <p>+7 (707) 878-53-69</p>
+            </div>
+            <div class="contact-item">
+                <i class='bx bx-map'></i>
+                <p>Семей, Высший IT колледж</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form>
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">© 2025 Drones by Gleb | Все права защищены</div>
+        </footer>
+    </body>
+</html>

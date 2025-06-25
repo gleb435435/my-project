@@ -1,0 +1,246 @@
+/********** Common CSS Starts **********/  
+html, body {
+    font-family: sans-serif, arial;
+    font-size: 14px;
+    color: #242424;
+    font-weight: 400;
+}
+* {
+    margin:0px;
+    padding:0px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    outline:0 
+}
+  /**********  Logo and nav CSS Code Starts  **********/
+  header {
+    background: rgb(70, 181, 224);
+    padding: 12px 0px;
+  }
+  Span{
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .logo{
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .r{
+    color: white;
+  }
+  .e{
+    color: indigo;
+  }
+  .b{
+    color: blue;
+  }
+  .s{
+    color: green;
+  }
+  .y{
+    color: orange;
+  }
+  
+  .nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  .nav ul li{
+    display: inline;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  .nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav li:hover{
+    cursor: pointer;
+    background: greenyellow;
+    font-size: 30px;
+  }
+  /**********  Logo and nav CSS Code Ends  **********/
+.main-cont{
+position: relative;
+width: 100%;
+height: 100%;
+}
+a:hover{
+  cursor: pointer;
+}
+.container {
+    width:100%;
+    margin:0px auto;
+    display:table;
+}
+.width-70{
+        z-index: 1;
+        background: rgb(255, 255, 255);
+        position: relative;
+        display: flex;
+        height: 100%;
+        width: 80%;
+        border-radius: 20px;
+        margin: 0%;
+        margin-left: 21%;
+        float: right;
+}
+.width-33{
+    width:100%;
+    position: absolute;
+    display: block;
+}
+.row {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.row img:hover{
+  margin-bottom: 5px;
+}
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 5px;
+  transition: transform 0.5s;
+}
+.col-4 img {
+  width: 100%;
+}
+.login{
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.sidebar{
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: rgb(217, 232, 241);
+  margin-left: 0;
+  float: left;
+}
+.sidebar h2{
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background: #242424;
+}
+.sidebar ul a{
+  position: relative;
+  height: 100%;
+  width:20% ;
+  line-height: 65px;
+  font-size: 25px;
+  color: white;
+  padding-left:20px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.sidebar ul li{
+  display: block;
+}
+.sidebar ul li:hover{
+  margin-right: 5px;
+}
+/********** Common CSS Ends **********/
+  
+/**********  Footer-Section CSS Code Starts  **********/
+footer{
+  background: #242424;
+  margin-bottom: 0;
+  height: 300px;
+}
+.footer1 {
+  background: #242424;
+  color: #8a8a8a;
+  font-size: 14px;
+}
+.footer p {
+  color: #8a8a8a;
+}
+.footer h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.footer-col-3,
+.footer-col-4 {
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-3,
+.footer-col-4 {
+  flex-basis: 12%;
+  text-align: center;
+}
+.footer-col-3 li,
+.footer-col-4 li{
+  padding-bottom: 10px;
+}
+ul {
+  list-style-type: none;
+}
+footer ul li a{
+  text-decoration: none;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  color: #8a8a8a;
+}
+footer ul li a:hover{
+  color: #ffff;
+  text-decoration: underline;
+}
+.footer hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
+}
+.copyright {
+  text-align: center;
+}
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+  }
+  .copyright {
+    text-align: center;
+  }
+  .social-media li{
+    display: inline;
+    font-size: 20px;
+  }
+/**********  Footer-Section CSS Code Starts  **********/
+@media screen and (max-width: 768px) {
+  .width-70 {
+      width: 100%;
+      margin-left: 0;
+  }
+  .sidebar {
+      display: none;
+  }
+  .row {
+      margin-top: 200px;
+  }
+  .col-4 {
+      flex-basis: 50%;
+      min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+      display: none;
+  }
+}

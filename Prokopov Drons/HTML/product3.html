@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Drones by Gleb | Autel EVO Lite+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #cc0000;
+            --gray: #e5e5e5;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--black);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--red);
+        }
+        .nav-links a {
+            color: var(--white);
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--red);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Images/drone3.jpg') center/cover no-repeat;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .product-details {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .product-details img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .product-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .product-details p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--red);
+            margin: 20px 0;
+        }
+        .product-btn {
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .product-btn:hover {
+            background: #a30000;
+        }
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Drones <span>by Gleb</span></a>
+                <div class="nav-links">
+                    <a href="about.html">О нас</a>
+                    <a href="contact.html">Контакты</a>
+                    <a href="signup.html"><button class="nav-btn">Регистрация</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AUTEL EVO LITE+</h1>
+        </div>
+    </section>
+
+    <div class="container content">
+        <div class="product-details">
+            <img src="Images/drone3.jpg" alt="Autel EVO Lite+">
+            <h2>Описание</h2>
+            <p>Autel EVO Lite+ — мощный дрон с камерой 6K, идеально подходящий для ночной съемки и профессиональных задач.</p>
+            <p><strong>Характеристики:</strong> 6K камера, время полета 40 минут, улучшенная ночная съемка.</p>
+            <div class="product-price">420 000₸</div>
+            <a href="shopping.html" class="product-btn">Купить сейчас</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">© 2025 Drones by Gleb | Все права защищены</div>
+        </footer>
+    </body>
+</html>

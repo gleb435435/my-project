@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>BetaFPV Cetus Pro - Drones by Gleb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #cc0000;
+            --deep-red: #b30000;
+            --gray: #e5e5e5;
+            --bright-yellow: #FFFF00;
+            --dark-gray: #333333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        header {
+            background: var(--black);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--red);
+        }
+        .nav-links a {
+            color: var(--white);
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--red);
+        }
+        .product-detail {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .product-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 20px;
+            background: var(--black);
+        }
+        .product-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        .product-specs {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .back-btn:hover {
+            background: #a30000;
+        }
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer-contacts p {
+            margin: 5px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer-contacts i {
+            color: var(--red);
+        }
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Drones <span>by Gleb</span></a>
+                <div class="nav-links">
+                    <a href="about.html">О нас</a>
+                    <a href="contact.html">Контакты</a>
+                    <a href="signup.html"><button class="nav-btn">Регистрация</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="product-detail">
+            <img src="Images/drone11.jpg" alt="BetaFPV Cetus Pro" class="product-img">
+            <h1 class="product-title">BetaFPV Cetus Pro</h1>
+            <p class="product-specs">FPV, 22 минуты полёта, до 5 км дальность, вес 250-1000 г</p>
+            <div class="product-price">250 000₸</div>
+            <a href="catalog3.html" class="back-btn">Вернуться в каталог</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-contacts">
+                <p><i class='bx bx-envelope'></i> glebsyprim@gmail.com</p>
+                <p><i class='bx bx-phone'></i> +7 (707) 878-53-69</p>
+                <p><i class='bx bx-map'></i> Семей, Высший IT колледж</p>
+            </div>
+            <div class="copyright">© 2025 Drones by Gleb | Все права защищены</div>
+        </footer>
+</body>
+</html>

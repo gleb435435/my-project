@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Drones by Gleb | Каталог - Страница 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #cc0000;
+            --deep-red: #b30000;
+            --gray: #e5e5e5;
+            --bright-yellow: #FFFF00;
+            --dark-gray: #333333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        header {
+            background: var(--black);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--red);
+        }
+        .nav-links a {
+            color: var(--white);
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--red);
+        }
+        .hero {
+            position: relative;
+            padding: 120px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .filter-container {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 99;
+        }
+        .filter-toggle {
+            background: var(--dark-gray);
+            color: var(--red);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--red);
+            position: relative;
+            z-index: 100;
+        }
+        .filter-toggle:hover {
+            background: #4a4a4a;
+            transform: rotate(360deg) scale(1.1);
+        }
+        .filter-toggle:focus {
+            outline: none;
+        }
+        .filter-toggle::after {
+            content: "Показать фильтры";
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 101;
+        }
+        .filter-toggle:hover::after {
+            opacity: 1;
+        }
+        #filter-checkbox {
+            display: none;
+        }
+        #filter-checkbox:checked ~ .filter-panel {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+        .filter-panel {
+            width: 150px;
+            background: var(--dark-gray);
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 60px;
+            border-radius: 6px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(-50%) translateX(-160px);
+            transition: transform 0.5s ease-out, opacity 0.3s ease-in;
+        }
+        .filter-section {
+            margin: 8px 0;
+        }
+        .filter-section select {
+            width: 100%;
+            padding: 4px;
+            margin-bottom: 4px;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .product-card {
+            background: var(--bright-yellow);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            color: var(--black);
+        }
+        .product-card.show {
+            display: block;
+        }
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--black);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+        .product-specs {
+            font-size: 0.9rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--red);
+            margin: 15px 0;
+        }
+        .product-btn {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .product-btn:hover {
+            background: #a30000;
+        }
+        .catalog-nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .catalog-nav a {
+            color: var(--white);
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 5px;
+            background: var(--dark-gray);
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .catalog-nav a.active {
+            background: var(--red);
+            color: var(--white);
+        }
+        .catalog-nav a:hover {
+            background: #4a4a4a;
+            color: var(--white);
+        }
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer-contacts p {
+            margin: 5px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer-contacts i {
+            color: var(--red);
+        }
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Drones <span>by Gleb</span></a>
+                <div class="nav-links">
+                    <a href="about.html">О нас</a>
+                    <a href="contact.html">Контакты</a>
+                    <a href="signup.html"><button class="nav-btn">Регистрация</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <video autoplay muted loop>
+                <source src="Images/banner-video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <div class="hero-content">
+                <h1>ПРОФЕССИОНАЛЬНЫЕ ДРОНЫ</h1>
+                <p>Инновационные решения для аэросъемки и индустрии</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 style="text-align:center;font-size:2rem;margin-bottom:30px">КАТАЛОГ ПРОДУКЦИИ - Страница 3</h2>
+        <div class="filter-container">
+            <input type="checkbox" id="filter-checkbox">
+            <label for="filter-checkbox" class="filter-toggle"><i class='bx bx-drone'></i></label>
+            <div class="filter-panel" id="filterPanel">
+                <div class="filter-section">
+                    <select id="flight-time">
+                        <option value="all">Время полета</option>
+                        <option value="15">Больше 15 минут</option>
+                        <option value="20">Больше 20 минут</option>
+                        <option value="30">Больше 30 минут</option>
+                        <option value="40">Больше 40 минут</option>
+                        <option value="50">Больше 50 минут</option>
+                    </select>
+                    <select id="weight">
+                        <option value="all">Вес</option>
+                        <option value="light">До 250 г</option>
+                        <option value="medium">250-1000 г</option>
+                        <option value="heavy">Больше 1000 г</option>
+                    </select>
+                    <select id="type">
+                        <option value="all">Тип</option>
+                        <option value="consumer">Для потребителей</option>
+                        <option value="professional">Профессиональный</option>
+                        <option value="fpv">FPV</option>
+                    </select>
+                    <select id="brand">
+                        <option value="all">Фирма</option>
+                        <option value="dji">DJI</option>
+                        <option value="autel">Autel</option>
+                        <option value="other">Другие</option>
+                        <option value="skydio">Skydio</option>
+                        <option value="betafpv">BetaFPV</option>
+                    </select>
+                    <select id="price">
+                        <option value="all">Цена</option>
+                        <option value="low">До 300 000₸</option>
+                        <option value="medium">300 000–600 000₸</option>
+                        <option value="high">Больше 600 000₸</option>
+                    </select>
+                    <select id="range">
+                        <option value="all">Дальность</option>
+                        <option value="short">До 5 км</option>
+                        <option value="medium">5–10 км</option>
+                        <option value="long">Больше 10 км</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <div class="product-card" data-flight-time="35" data-weight="light" data-type="consumer" data-brand="dji" data-price="medium" data-range="medium">
+                <img src="Images/drone10.jpg" alt="DJI Mini 4 Pro" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">DJI MINI 4 PRO</h3>
+                    <p class="product-specs">4K HDR, 35 мин полёта</p>
+                    <div class="product-price">400 000₸</div>
+                    <a href="product10.html" class="product-btn">Подробнее</a>
+                </div>
+            </div>
+            <div class="product-card" data-flight-time="22" data-weight="medium" data-type="fpv" data-brand="other" data-price="low" data-range="short">
+                <img src="Images/drone11.jpg" alt="BetaFPV Cetus Pro" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">BETAFPV CETUS PRO</h3>
+                    <p class="product-specs">FPV, 22 мин полёта</p>
+                    <div class="product-price">250 000₸</div>
+                    <a href="product11.html" class="product-btn">Подробнее</a>
+                </div>
+            </div>
+            <div class="product-card" data-flight-time="45" data-weight="heavy" data-type="professional" data-brand="autel" data-price="high" data-range="long">
+                <img src="Images/drone12.jpg" alt="Autel EVO II Pro" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">AUTEL EVO II PRO</h3>
+                    <p class="product-specs">6K, 45 мин полёта, 15 км дальность</p>
+                    <div class="product-price">1 000 000₸</div>
+                    <a href="product12.html" class="product-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="catalog-nav">
+            <a href="index.html">1</a>
+            <a href="catalog2.html">2</a>
+            <a href="catalog3.html" class="active">3</a>
+            <a href="catalog4.html">4</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-contacts">
+                <p><i class='bx bx-envelope'></i> glebsyprim@gmail.com</p>
+                <p><i class='bx bx-phone'></i> +7 (707) 878-53-69</p>
+                <p><i class='bx bx-map'></i> Семей, Высший IT колледж</p>
+            </div>
+            <div class="copyright">© 2025 Drones by Gleb | Все права защищены</div>
+        </footer>
+
+    <script>
+        // Получаем все селекты и контейнер с продуктами
+        const filters = {
+            flightTime: document.getElementById('flight-time'),
+            weight: document.getElementById('weight'),
+            type: document.getElementById('type'),
+            brand: document.getElementById('brand'),
+            price: document.getElementById('price'),
+            range: document.getElementById('range')
+        };
+        const productsGrid = document.getElementById('productsGrid');
+
+        // Функция фильтрации
+        function filterProducts() {
+            const flightTime = filters.flightTime.value;
+            const weight = filters.weight.value;
+            const type = filters.type.value;
+            const brand = filters.brand.value;
+            const price = filters.price.value;
+            const range = filters.range.value;
+
+            const products = productsGrid.getElementsByClassName('product-card');
+
+            for (let product of products) {
+                let show = true;
+
+                if (flightTime !== 'all' && parseInt(product.getAttribute('data-flight-time')) <= parseInt(flightTime)) {
+                    show = false;
+                }
+                if (weight !== 'all' && product.getAttribute('data-weight') !== weight) {
+                    show = false;
+                }
+                if (type !== 'all' && product.getAttribute('data-type') !== type) {
+                    show = false;
+                }
+                if (brand !== 'all' && product.getAttribute('data-brand') !== brand) {
+                    show = false;
+                }
+                if (price !== 'all' && product.getAttribute('data-price') !== price) {
+                    show = false;
+                }
+                if (range !== 'all' && product.getAttribute('data-range') !== range) {
+                    show = false;
+                }
+
+                product.style.display = show ? 'block' : 'none';
+            }
+        }
+
+        // Добавляем слушатели событий на все селекты
+        Object.values(filters).forEach(filter => {
+            filter.addEventListener('change', filterProducts);
+        });
+
+        // Изначально показываем все продукты
+        filterProducts();
+    </script>
+</body>
+</html>
